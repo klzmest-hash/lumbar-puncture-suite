@@ -1,0 +1,53 @@
+# 公开版示例 — 训练超参与数据路径需自行标定，非论文复现配置。
+run:
+  mode: train
+  device: "0"
+transforms: none
+dataset:
+  class_name: fifth_3d
+  data_root: inputs/3D
+  use_multi_center: false
+  centers: []
+  input_size: [96, 96, 96]
+  num_classes: 17
+  img_ext: ".nii.gz"
+  mask_ext: ".nii.gz"
+data_loader:
+  train:
+    batch_size: 2
+    shuffle: true
+    num_workers: 2
+    pin_memory: true
+    drop_last: false
+    persistent_workers: false
+  validation:
+    batch_size: 2
+    shuffle: false
+    num_workers: 2
+    pin_memory: true
+    drop_last: false
+    persistent_workers: false
+  test:
+    batch_size: 2
+    shuffle: false
+    num_workers: 2
+    pin_memory: true
+    drop_last: false
+    persistent_workers: false
+training:
+  optimizer:
+    name: Adam
+    params:
+      lr: 0.0001
+  scheduler:
+    factor: 0.5
+    patience: 10
+  epochs: 100
+  use_amp: true
+model:
+  save_dir: saved_models/attunet_3d
+  load_weights: false
+  name: AttU_Net3d
+  params:
+    img_ch: 1
+    output_ch: 17

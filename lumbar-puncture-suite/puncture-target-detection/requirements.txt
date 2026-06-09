@@ -1,0 +1,8 @@
+# 穿刺靶点基线训练（puncture_target）
+torch>=1.10
+nibabel>=3.2
+pandas>=1.2
+numpy>=1.19
+tqdm>=4.60
+openpyxl>=3.0
+PyYAML>=5.4

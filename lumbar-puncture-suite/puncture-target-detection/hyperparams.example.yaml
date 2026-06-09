@@ -1,0 +1,33 @@
+# 公开版示例配置 — 数值为占位，非论文最终调优结果。
+# 使用前请复制为 hyperparams.yaml 并在本地验证集上重新标定。
+
+training:
+  epochs: 100
+  batch_size: 4
+  lr: 0.001
+  val_ratio: 0.2
+  test_ratio: 0.2
+  seed: 0
+  patch_size: [64, 64, 64]
+  hu_min: -200
+  hu_max: 800
+  jitter_voxels: 2.0
+  center_jitter_voxels: 0.0
+  max_cached_cases: 4
+  num_workers: 2
+  prefetch_factor: 2
+  weight_decay: 0.0001
+
+heuristic:
+  z_percentile_l4l5: 50.0
+  z_percentile_l5s1: 50.0
+  l5s1_l5_weight: 0.5
+
+inference:
+  lr_collapse_mm: 5.0
+  lr_half_width_mm: 10.0
+  lr_extra_lateral_mm: 2.0
+  foramen_anterior_mm: 0.0
+  foramen_posterior_mm: 0.0
+  foramen_superior_l4l5_mm: 0.0
+  foramen_superior_l5s1_mm: 0.0

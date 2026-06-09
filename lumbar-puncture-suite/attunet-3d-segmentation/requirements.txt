@@ -1,0 +1,35 @@
+# TransUNet 训练所需依赖库
+
+# 深度学习框架
+torch>=1.8.0
+torchvision>=0.9.0
+
+# 评估指标
+torchmetrics>=0.7.0
+
+# 数值计算和科学计算
+numpy>=1.19.0
+scipy>=1.5.0
+
+# 图像处理
+opencv-python>=4.5.0
+Pillow>=8.0.0
+
+# 配置管理
+ml-collections>=0.1.0
+
+# 进度条
+tqdm>=4.60.0
+
+# 可视化
+matplotlib>=3.3.0
+
+# 数据处理（可选，某些脚本可能需要）
+pandas>=1.2.0
+scikit-image>=0.18.0
+
+# 医学图像处理
+nibabel>=3.2.0
+
+# YAML配置文件解析（通常Python内置，但某些环境可能需要）
+PyYAML>=5.4.0
